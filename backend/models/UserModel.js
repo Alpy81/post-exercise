@@ -1,10 +1,6 @@
 import mongoose from "mongoose";
 
-const postSchema = new mongoose.Schema({
-  title: {
-    type: String,
-    require: true,
-  },
+const UserSchema = new mongoose.Schema({
   adress: {
     type: String,
     require: true,
@@ -12,6 +8,11 @@ const postSchema = new mongoose.Schema({
   name: {
     type: String,
     require: true,
+  },
+  email: {
+    type: String,
+    require: true,
+    unique: true,
   },
   smoker: {
     type: Boolean,
@@ -23,4 +24,4 @@ const postSchema = new mongoose.Schema({
   },
 });
 
-export const PostModel = mongoose.model("posts", postSchema);
+export const UserModel = mongoose.model("User", UserSchema);
